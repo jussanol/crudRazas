@@ -1,0 +1,34 @@
+<header>
+    <h1>Lista de razas</h1>
+</header>
+
+<div class="botoneraHeader">
+    <button id="btnNuevo" class="btn-primary">Nueva Raza</button>
+</div>
+
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Es Alianza</th>
+        <th>Acciones</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let raza of listaRazas;">
+            <td>{{raza.id}}</td>
+            <td>{{raza.nombre}}</td>
+            <td>{{raza.descripcion}}</td>
+            <td>{{raza.razaAlianza}}</td>
+            <td>
+                <!--Botones de acción-->
+                <button id="btnEditar" class="btn-secondary">Editar</button>
+                <button id="btnEliminar" class="btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="botoneraFooter">
+    <button id="btnVolcer" class="btn-secondary">Volver</button>
+</div>
