@@ -1,3 +1,27 @@
  #crudRazas{
     background-color: #9c9c9c;
  }
+
+ .botoneraFooter{
+    padding: 10px;
+ }
+ form{
+    padding: 10px;
+ }
+
+ button {
+    margin: 5px;
+ }
+
+ .ng-valid[required], .ng-valid.required{
+   border-left: 5px solid #42a948;
+ }
+
+ .ng-invalid:not(form){
+   border-left: 5px solid #a94442;
+ }
+
+ #btnGuardar:disabled{
+   background: silver;
+   border: 2px solid silver;
+ }

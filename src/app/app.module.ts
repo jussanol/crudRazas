@@ -8,19 +8,24 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RazasListComponent } from './entities/razas/razas-list/razas-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RazaFormComponent } from './entities/razas/raza-form/raza-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    RazasListComponent
+    RazasListComponent,
+    RazaFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

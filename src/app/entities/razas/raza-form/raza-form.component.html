@@ -1,0 +1,53 @@
+<header>
+    <h1>Ficha de razas</h1>
+</header>
+
+<div class="alert alert-danger" role="danger" *ngIf="error">
+    {{mensaje}}
+</div>
+<div class="alert alert-success" role="danger" *ngIf="succes">
+    {{mensaje}}
+</div>
+
+<form name="razaForm" role="form" novalidate #editForm="ngForm" autocomplete="off">
+    <div class="form-group" *ngIf="!modoAlta">
+        <label for="id">ID</label>
+        <input type="text" class="form-control" id="id" name="id" [(ngModel)]="raza.id">
+    </div>
+
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="raza.nombre" required
+            maxlength="100">
+    </div>
+
+    <div [hidden]="!(editForm.controls.nombre?.dirty && editForm.controls.nombre?.invalid)">
+        <small class="form-text text-danger" [hidden]="!editForm.controls.nombre?.errors?.required">
+            El campo nombre es requerido
+        </small>
+        <small class="form-text text-danger" [hidden]="!editForm.controls.nombre?.errors?.maxlength">
+            El campo no puede superar los 100 carácteres
+        </small>
+    </div>
+
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="raza.descripcion"
+            required maxlength="500">
+    </div>
+
+    <div class="form-group">
+        <label for="razaAlianza">¿Es Alianza?</label>
+        <input type="checkbox" class="form-control" id="razaAlianza" name="razaAlianza" [(ngModel)]="raza.razaAlianza">
+
+    </div>
+
+</form>
+
+<div class="botoneraFooter">
+    <a routerLink="/razas">
+        <button id="btnVolver" class="btn-secondary">Volver</button>
+    </a>
+    <button id="btnGuardar" [disabled]="editForm.form.invalid" id="btnGuardar" class="btn-primary"
+        (click)="guardar()">Guardar</button>
+</div>
